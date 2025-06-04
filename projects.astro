@@ -1,0 +1,211 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+
+const projects = [
+  {
+    title: "Personal Portfolio",
+    description: "Website presenting my profile and achievements",
+    image: "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    tags: ["HTML", "CSS", "JavaScript", "Astro"],
+    link: "https://github.com/jaurèsryan/portfolio",
+    featured: true,
+    category: "Web Development"
+  },
+  {
+    title: "AI Revision App",
+    description: "Web application to help students study using AI",
+    image: "https://images.pexels.com/photos/7088528/pexels-photo-7088528.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    tags: ["React", "Node.js", "AI", "MongoDB"],
+    link: "https://monappai.com",
+    featured: true,
+    category: "AI Solutions"
+  },
+  {
+    title: "SME Automation",
+    description: "Automated tools for managing SMEs",
+    image: "https://images.pexels.com/photos/6457521/pexels-photo-6457521.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    tags: ["JavaScript", "Python", "Automation"],
+    link: "https://monserviceauto.com",
+    featured: true,
+    category: "Automation"
+  },
+  {
+    title: "E-commerce Website",
+    description: "Modern online store with payment integration",
+    image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    tags: ["React", "Node.js", "Stripe", "MongoDB"],
+    link: "#",
+    featured: false,
+    category: "Web Development"
+  },
+  {
+    title: "Task Management App",
+    description: "Application for managing personal and team tasks",
+    image: "https://images.pexels.com/photos/3243/pen-calendar-to-do-checklist.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    tags: ["Vue.js", "Firebase", "Tailwind CSS"],
+    link: "#",
+    featured: false,
+    category: "Web Development"
+  },
+  {
+    title: "Data Visualization Dashboard",
+    description: "Interactive dashboard for visualizing business data",
+    image: "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    tags: ["D3.js", "React", "Node.js"],
+    link: "#",
+    featured: false,
+    category: "Data Analysis"
+  }
+];
+
+// Get unique categories
+const categories = ["All", ...new Set(projects.map(project => project.category))];
+---
+
+<Layout title="KENMOGNE OUAMBO JAURÈS RYAN | Projects">
+  <div class="page-transition pt-20">
+    <!-- Projects Hero -->
+    <section class="py-20 bg-gray-50 dark:bg-gray-800">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6" data-aos="fade-up">
+            My Projects
+          </h1>
+          <div class="h-1 w-20 bg-primary-500 mx-auto mb-6" data-aos="fade-up" data-aos-delay="100"></div>
+          <p class="text-lg text-gray-600 dark:text-gray-300 mb-10 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+            Explore my portfolio of web development, automation, and AI projects that showcase my skills and expertise.
+          </p>
+          
+          <!-- Filter buttons -->
+          <div class="flex flex-wrap justify-center gap-3 mb-8" data-aos="fade-up" data-aos-delay="300">
+            {categories.map(category => (
+              <button 
+                class="category-btn px-4 py-2 rounded-full text-sm font-medium border transition-colors duration-300 hover:bg-primary-500 hover:text-white hover:border-primary-500"
+                data-category={category}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Projects Grid -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+          {projects.map((project, index) => (
+            <div 
+              data-aos="fade-up" 
+              data-aos-delay={index * 100}
+              class="project-item"
+              data-category={project.category}
+            >
+              <ProjectCard
+                title={project.title}
+                description={project.description}
+                image={project.image}
+                tags={project.tags}
+                link={project.link}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+    
+    <!-- Contact CTA -->
+    <section class="py-20 bg-gray-50 dark:bg-gray-800">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+          <h2 class="text-2xl md:text-3xl font-bold mb-4">Have a Project in Mind?</h2>
+          <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
+            Let's discuss how I can help bring your ideas to life with tailored solutions.
+          </p>
+          <a 
+            href="/contact" 
+            class="inline-flex items-center px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors duration-300"
+          >
+            Start a Conversation
+            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const projectItems = document.querySelectorAll('.project-item');
+    const categoryBtns = document.querySelectorAll('.category-btn');
+    
+    // Set "All" as active by default
+    const allBtn = document.querySelector('[data-category="All"]');
+    allBtn?.classList.add('bg-primary-500', 'text-white', 'border-primary-500');
+    
+    // Add click event to category buttons
+    categoryBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Remove active class from all buttons
+        categoryBtns.forEach(btn => {
+          btn.classList.remove('bg-primary-500', 'text-white', 'border-primary-500');
+          btn.classList.add('bg-white', 'dark:bg-gray-800', 'text-gray-700', 'dark:text-gray-300', 'border-gray-300', 'dark:border-gray-700');
+        });
+        
+        // Add active class to clicked button
+        btn.classList.remove('bg-white', 'dark:bg-gray-800', 'text-gray-700', 'dark:text-gray-300', 'border-gray-300', 'dark:border-gray-700');
+        btn.classList.add('bg-primary-500', 'text-white', 'border-primary-500');
+        
+        const selectedCategory = btn.getAttribute('data-category');
+        
+        // Filter projects
+        projectItems.forEach(item => {
+          const projectCategory = item.getAttribute('data-category');
+          
+          if (selectedCategory === 'All' || selectedCategory === projectCategory) {
+            item.style.display = 'block';
+            // Trigger AOS animation
+            setTimeout(() => {
+              item.setAttribute('data-aos-delay', '0');
+              item.setAttribute('data-aos', 'fade-up');
+              AOS.refresh();
+            }, 100);
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  });
+</script>
+
+<style>
+  .category-btn {
+    background-color: white;
+    color: #374151;
+    border-color: #D1D5DB;
+  }
+  
+  .dark .category-btn {
+    background-color: #1F2937;
+    color: #D1D5DB;
+    border-color: #4B5563;
+  }
+  
+  .category-btn[data-category="All"] {
+    background-color: #0066ff;
+    color: white;
+    border-color: #0066ff;
+  }
+  
+  .dark .category-btn[data-category="All"] {
+    background-color: #0066ff;
+    color: white;
+    border-color: #0066ff;
+  }
+</style>

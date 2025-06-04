@@ -1,0 +1,173 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const skills = [
+  { name: "HTML5", level: 90 },
+  { name: "CSS3", level: 85 },
+  { name: "JavaScript (ES6+)", level: 80 },
+  { name: "React", level: 75 },
+  { name: "Node.js", level: 70 },
+  { name: "AI & Python scripting", level: 65 },
+  { name: "Project Management", level: 60 },
+  { name: "Digital Marketing", level: 55 },
+  { name: "Web Deployment", level: 65 }
+];
+---
+
+<Layout title="KENMOGNE OUAMBO JAURÈS RYAN | About">
+  <div class="page-transition pt-20">
+    <!-- About Hero Section -->
+    <section class="py-20 bg-gray-50 dark:bg-gray-800">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-center" data-aos="fade-up">
+            About Me
+          </h1>
+          <div class="h-1 w-20 bg-primary-500 mx-auto mb-10" data-aos="fade-up" data-aos-delay="100"></div>
+          
+          <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-8 md:p-10" data-aos="fade-up" data-aos-delay="200">
+            <div class="flex flex-col md:flex-row gap-8 items-center md:items-start">
+              <div class="w-full md:w-1/3 flex justify-center">
+                <div class="w-48 h-48 rounded-full overflow-hidden shadow-lg bg-gradient-to-br from-primary-500 to-secondary-500 p-1">
+                  <img 
+                    src="https://i.postimg.cc/K8k4WnyH/jo12.jpg" 
+                    alt="KENMOGNE OUAMBO JAURÈS RYAN" 
+                    class="w-full h-full object-cover rounded-full"
+                  />
+                </div>
+              </div>
+              
+              <div class="w-full md:w-2/3">
+                <h2 class="text-2xl font-bold mb-4 text-gray-800 dark:text-white">
+                  KENMOGNE OUAMBO JAURÈS RYAN
+                </h2>
+                <h3 class="text-lg text-primary-600 dark:text-primary-400 font-medium mb-4">
+                  Student Entrepreneur & Web Developer
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                  I am a computer science student based in Douala, specializing in web development, automation, and artificial intelligence. I also develop personal projects and offer freelance services to help SMEs automate their processes.
+                </p>
+                
+                <div class="flex flex-wrap gap-4">
+                  <a 
+                    href="/contact" 
+                    class="inline-flex items-center px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors duration-300"
+                  >
+                    Contact Me
+                    <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                  </a>
+                  <a 
+                    href="/projects" 
+                    class="inline-flex items-center px-4 py-2 border border-primary-600 dark:border-primary-400 text-primary-600 dark:text-primary-400 font-medium rounded-lg transition-colors duration-300 hover:bg-primary-50 dark:hover:bg-gray-800"
+                  >
+                    View Projects
+                    <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Bio Section -->
+    <section class="py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div data-aos="fade-right">
+              <h2 class="text-2xl md:text-3xl font-bold mb-6 text-gray-800 dark:text-white">
+                My Journey
+              </h2>
+              <div class="h-1 w-16 bg-primary-500 mb-6"></div>
+              <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+                My journey in technology began with a curiosity about how digital tools can solve real-world problems. As a student of computer science, I've been able to explore various aspects of technology, from web development to artificial intelligence.
+              </p>
+              <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+                I believe in the power of technology to transform businesses and improve lives, which is why I focus on creating practical solutions that make a difference.
+              </p>
+              <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                Based in Douala, I've had the opportunity to work with local businesses to help them leverage technology for growth and efficiency.
+              </p>
+            </div>
+            
+            <div data-aos="fade-left">
+              <h2 class="text-2xl md:text-3xl font-bold mb-6 text-gray-800 dark:text-white">
+                My Approach
+              </h2>
+              <div class="h-1 w-16 bg-primary-500 mb-6"></div>
+              <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+                I approach each project with a focus on understanding the unique needs and challenges of my clients. I believe in creating solutions that are not just technically sound but also user-friendly and effective.
+              </p>
+              <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+                Whether it's developing a website, automating a business process, or implementing an AI solution, I ensure that the end result meets the specific goals of the project.
+              </p>
+              <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                My work is driven by a passion for innovation and a commitment to delivering quality results that exceed expectations.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section class="py-20 bg-gray-50 dark:bg-gray-800">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold mb-6 text-center" data-aos="fade-up">
+            My Skills
+          </h2>
+          <div class="h-1 w-16 bg-primary-500 mx-auto mb-12" data-aos="fade-up" data-aos-delay="100"></div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {skills.map((skill, index) => (
+              <div 
+                class="bg-white dark:bg-gray-900 rounded-lg p-6 shadow-md"
+                data-aos="fade-up"
+                data-aos-delay={index * 50}
+              >
+                <div class="flex justify-between items-center mb-2">
+                  <h3 class="font-medium text-gray-800 dark:text-white">{skill.name}</h3>
+                  <span class="text-sm text-gray-600 dark:text-gray-400">{skill.level}%</span>
+                </div>
+                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                  <div 
+                    class="bg-gradient-to-r from-primary-500 to-secondary-500 h-2.5 rounded-full transition-all duration-1000"
+                    style={`width: ${skill.level}%`}
+                  ></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Call to Action -->
+    <section class="py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto bg-gradient-to-r from-primary-600 to-secondary-600 dark:from-primary-700 dark:to-secondary-700 rounded-xl shadow-xl p-10 text-white text-center" data-aos="fade-up">
+          <h2 class="text-2xl md:text-3xl font-bold mb-4">Ready to Work Together?</h2>
+          <p class="text-lg opacity-90 mb-8">
+            Let's turn your ideas into reality. Whether you need a website, automation solution, or AI integration, I'm here to help.
+          </p>
+          <a 
+            href="/contact" 
+            class="inline-flex items-center px-6 py-3 bg-white text-primary-600 font-medium rounded-lg transition-colors duration-300 hover:bg-gray-100"
+          >
+            Get in Touch
+            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

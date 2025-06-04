@@ -1,0 +1,157 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Typed from '../components/Typed.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+
+const projects = [
+  {
+    title: "Personal Portfolio",
+    description: "Website presenting my profile and achievements",
+    image: "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    tags: ["HTML", "CSS", "JavaScript", "Astro"],
+    link: "https://github.com/jaurèsryan/portfolio"
+  },
+  {
+    title: "AI Revision App",
+    description: "Web application to help students study using AI",
+    image: "https://images.pexels.com/photos/7088528/pexels-photo-7088528.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    tags: ["React", "Node.js", "AI", "MongoDB"],
+    link: "https://monappai.com"
+  },
+  {
+    title: "SME Automation",
+    description: "Automated tools for managing SMEs",
+    image: "https://images.pexels.com/photos/6457521/pexels-photo-6457521.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    tags: ["JavaScript", "Python", "Automation"],
+    link: "https://monserviceauto.com"
+  }
+];
+---
+
+<Layout title="KENMOGNE OUAMBO JAURÈS RYAN | Home">
+  <div class="page-transition">
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary-900/30 to-secondary-900/20 dark:from-primary-900/50 dark:to-secondary-900/40 z-10"></div>
+        <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-400/10 via-transparent to-transparent dark:from-primary-600/20"></div>
+      </div>
+      
+      <div class="container mx-auto px-4 z-10">
+        <div class="max-w-4xl mx-auto text-center">
+          <p class="text-primary-600 dark:text-primary-400 font-medium mb-4" data-aos="fade-up" data-aos-delay="100">
+            Hello, I'm
+          </p>
+          <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-secondary-500 dark:from-primary-400 dark:to-secondary-400" data-aos="fade-up" data-aos-delay="200">
+            KENMOGNE OUAMBO JAURÈS RYAN
+          </h1>
+          <div class="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8" data-aos="fade-up" data-aos-delay="300">
+            <Typed 
+              strings={[
+                "Student entrepreneur passionate about tech",
+                "Web Developer",
+                "AI Enthusiast",
+                "Automation Specialist"
+              ]}
+              typeSpeed={50}
+              backSpeed={30}
+              loop={true}
+            />
+          </div>
+          <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-10 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="400">
+            I create innovative projects to improve digital life.
+          </p>
+          <div class="flex flex-col sm:flex-row justify-center gap-4" data-aos="fade-up" data-aos-delay="500">
+            <a href="/about" class="px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors duration-300 shadow-lg hover:shadow-xl">
+              Learn More
+            </a>
+            <a href="/contact" class="px-8 py-3 bg-white dark:bg-gray-800 text-primary-600 dark:text-primary-400 border border-primary-600 dark:border-primary-400 font-medium rounded-lg transition-colors duration-300 hover:bg-primary-50 dark:hover:bg-gray-700">
+              Get in Touch
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10">
+        <a href="#quote" class="flex flex-col items-center text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-300">
+          <span class="text-sm mb-2">Scroll Down</span>
+          <svg class="w-6 h-6 animate-bounce-slow" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
+        </a>
+      </div>
+    </section>
+    
+    <!-- Quote Section -->
+    <section id="quote" class="py-20 bg-gray-50 dark:bg-gray-800">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+          <svg class="w-12 h-12 mx-auto mb-6 text-primary-500 dark:text-primary-400" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z"></path>
+          </svg>
+          <blockquote class="text-2xl md:text-3xl lg:text-4xl font-montserrat font-medium italic text-gray-800 dark:text-gray-200 mb-8">
+            "Create, code, conquer."
+          </blockquote>
+          <div class="flex items-center justify-center">
+            <div class="h-px w-12 bg-primary-500 dark:bg-primary-400"></div>
+            <p class="mx-4 text-gray-600 dark:text-gray-400 font-medium">My Philosophy</p>
+            <div class="h-px w-12 bg-primary-500 dark:bg-primary-400"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Featured Projects Section -->
+    <section class="py-20">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
+          <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            Check out some of my recent work that showcases my skills and experience.
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
+            <div data-aos="fade-up" data-aos-delay={index * 100}>
+              <ProjectCard
+                title={project.title}
+                description={project.description}
+                image={project.image}
+                tags={project.tags}
+                link={project.link}
+              />
+            </div>
+          ))}
+        </div>
+        
+        <div class="text-center mt-12" data-aos="fade-up">
+          <a href="/projects" class="inline-flex items-center px-6 py-3 border border-primary-600 dark:border-primary-400 text-primary-600 dark:text-primary-400 font-medium rounded-lg transition-colors duration-300 hover:bg-primary-50 dark:hover:bg-gray-800">
+            View All Projects
+            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-primary-600 to-secondary-600 dark:from-primary-700 dark:to-secondary-700">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center text-white" data-aos="fade-up">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">Interested in working together?</h2>
+          <p class="text-lg opacity-90 mb-10">
+            I'm always open to discussing new projects and opportunities.
+          </p>
+          <a href="/contact" class="inline-flex items-center px-8 py-4 bg-white text-primary-600 font-medium rounded-lg transition-colors duration-300 hover:bg-gray-100 shadow-lg hover:shadow-xl">
+            Get in Touch
+            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

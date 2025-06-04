@@ -1,0 +1,91 @@
+---
+export interface Props {
+  strings: string[];
+  typeSpeed?: number;
+  backSpeed?: number;
+  backDelay?: number;
+  startDelay?: number;
+  loop?: boolean;
+}
+
+const { 
+  strings, 
+  typeSpeed = 50, 
+  backSpeed = 30,
+  backDelay = 700,
+  startDelay = 300,
+  loop = false 
+} = Astro.props;
+---
+
+<span class="typed-text"></span>
+
+<script define:vars={{ strings, typeSpeed, backSpeed, backDelay, startDelay, loop }}>
+  document.addEventListener('DOMContentLoaded', function() {
+    const typedElement = document.querySelector('.typed-text');
+    let currentStringIndex = 0;
+    let currentCharIndex = 0;
+    let isDeleting = false;
+    let typingTimeout;
+
+    function type() {
+      const currentString = strings[currentStringIndex];
+      
+      if (isDeleting) {
+        // Deleting text
+        typedElement.textContent = currentString.substring(0, currentCharIndex - 1);
+        currentCharIndex--;
+        
+        if (currentCharIndex === 0) {
+          isDeleting = false;
+          currentStringIndex = (currentStringIndex + 1) % strings.length;
+          typingTimeout = setTimeout(type, backDelay);
+        } else {
+          typingTimeout = setTimeout(type, backSpeed);
+        }
+      } else {
+        // Typing text
+        typedElement.textContent = currentString.substring(0, currentCharIndex + 1);
+        currentCharIndex++;
+        
+        if (currentCharIndex === currentString.length) {
+          if (loop || currentStringIndex < strings.length - 1) {
+            isDeleting = true;
+            typingTimeout = setTimeout(type, backDelay);
+          }
+        } else {
+          typingTimeout = setTimeout(type, typeSpeed);
+        }
+      }
+    }
+    
+    // Start typing effect with a delay
+    setTimeout(() => {
+      type();
+    }, startDelay);
+    
+    // Clean up function for when component is removed
+    document.addEventListener('astro:before-swap', () => {
+      clearTimeout(typingTimeout);
+    });
+  });
+</script>
+
+<style>
+  .typed-text {
+    position: relative;
+  }
+  
+  .typed-text::after {
+    content: '|';
+    position: relative;
+    display: inline-block;
+    opacity: 1;
+    animation: blink 0.7s infinite;
+  }
+  
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+</style>
